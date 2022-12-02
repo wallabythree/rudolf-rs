@@ -10,7 +10,10 @@ pub fn get(
     let url = format!("https://adventofcode.com/{}/day/{}/input", year, day);
     let res = client
         .get(url)
-        .header(USER_AGENT, "rudolf-rs 0.1 (private) by wallaby3@proton.me")
+        .header(
+            USER_AGENT,
+            "rudolf-rs 0.1 (https://github.com/wallabythree/rudolf-rs)"
+        )
         .header(COOKIE, format!("session={}", session))
         .send()?
         .error_for_status()?;
